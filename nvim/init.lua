@@ -21,12 +21,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup our plugins, probably not ideal to do this all here, but it works for now! :)
 require("lazy").setup({
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' } },	
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.2',     dependencies = { 'nvim-lua/plenary.nvim' } },
+    { 'rose-pine/neovim',              name = 'rose-pine' },
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        config = function () 
+        config = function()
             local configs = require('nvim-treesitter.configs')
 
             configs.setup({
@@ -34,7 +34,7 @@ require("lazy").setup({
                 sync_install = false,
                 auto_install = true,
                 highlight = { enable = true },
-                indent = { enable = true },  
+                indent = { enable = true },
             })
         end
     },
@@ -44,14 +44,14 @@ require("lazy").setup({
         branch = 'v2.x',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},     -- Required
-            {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
     { 'rcarriga/nvim-notify' },
@@ -67,7 +67,7 @@ require("lazy").setup({
         dependencies = { { 'nvim-tree/nvim-web-devicons' } }
     },
     { 'nvim-lualine/lualine.nvim', dependencies = { { 'nvim-tree/nvim-web-devicons' } } },
-    { 'nvim-tree/nvim-tree.lua', dependencies = { { 'nvim-tree/nvim-web-devicons' } } }
+    { 'nvim-tree/nvim-tree.lua',   dependencies = { { 'nvim-tree/nvim-web-devicons' } } }
 })
 
 -- Set our default color scheme
@@ -86,4 +86,3 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 vim.opt.termguicolors = true
-
