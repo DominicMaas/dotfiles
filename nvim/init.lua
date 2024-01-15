@@ -22,7 +22,13 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup our plugins, probably not ideal to do this all here, but it works for now! :)
 require("lazy").setup({
     { 'nvim-telescope/telescope.nvim', tag = '0.1.2',     dependencies = { 'nvim-lua/plenary.nvim' } },
-    { 'rose-pine/neovim',              name = 'rose-pine' },
+    { 
+        'rose-pine/neovim',              
+        name = 'rose-pine',
+        opts = {
+            disable_background = true,
+        }
+    },
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
